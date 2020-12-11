@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
+// define function
 const handleNewFormSubmit = function (event) {
     event.preventDefault();
 
@@ -27,7 +28,7 @@ const createPoetryListItem = function (form) {
     poetryListItem.classList.add('poetry-list-item')
 
     const title = document.createElement('h2');
-    title.textContent = `Title ${form.title.value}`;
+    title.textContent = `Title: ${form.title.value}`;
     poetryListItem.appendChild(title);
 
     const author = document.createElement('h3');
@@ -38,12 +39,20 @@ const createPoetryListItem = function (form) {
     subgenre.textContent = `Subgenre: ${form.subgenre.value}`;
     poetryListItem.appendChild(subgenre);
 
-    return poetryListItem;
+    const read = document.createElement('p')
+    read.textContent = `I have ${form.read.value} this poem`;
+    poetryListItem.appendChild(read);
 
+    return poetryListItem;
 }
+
 
 const handleDelete = function (event) {
     const poetryList = document.querySelector('#poetry-list');
     poetryList.innerHTML = '';
 
 }
+
+    
+
+
